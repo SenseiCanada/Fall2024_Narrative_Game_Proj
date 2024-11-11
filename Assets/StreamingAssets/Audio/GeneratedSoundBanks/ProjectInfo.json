@@ -1,0 +1,36 @@
+{
+ "ProjectInfo": {
+  "Project": {
+   "Name": "Fall2024_NarrGame_WwiseProject",
+   "GUID": "{857DB996-AE05-4E20-9D8F-E0E2C592B217}",
+   "Generator": "2024.1.0.8669"
+  },
+  "CacheRoot": "../../../../Fall2024_NarrGame_WwiseProject/.cache",
+  "Platforms": [
+   {
+    "Name": "Mac",
+    "GUID": "{814FB19F-47DA-4785-BF9D-2468F9C8AAEA}",
+    "BasePlatform": "Mac",
+    "BasePlatformGUID": "{9C6217D5-DD11-4795-87C1-6CE02853C540}",
+    "Path": "../../../../Fall2024_NarrGame_WwiseProject/GeneratedSoundBanks/Mac"
+   },
+   {
+    "Name": "Windows",
+    "GUID": "{FF16C363-9EB0-400F-BD5B-C14106B45122}",
+    "BasePlatform": "Windows",
+    "BasePlatformGUID": "{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}",
+    "Path": "../../../../Fall2024_NarrGame_WwiseProject/GeneratedSoundBanks/Windows"
+   }
+  ],
+  "Languages": [
+   {
+    "Name": "English(US)",
+    "Id": "684519430",
+    "GUID": "{2559C0E6-D48A-4295-8DF7-0107C9AE1EA1}",
+    "Default": "true",
+    "UseAsStandIn": "true"
+   }
+  ],
+  "FileHash": "{F5624050-B334-084C-5F90-4F7EA9B2F831}"
+ }
+}
