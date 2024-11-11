@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{29C390C1-24C6-41AE-AA97-CB323AF1B80F}" SchemaVersion="123">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{29C390C1-24C6-41AE-AA97-CB323AF1B80F}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{29C390C1-24C6-41AE-AA97-CB323AF1B80F}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Audio_test" ID="{CB9FE582-15E5-41A6-A2E8-070D403664B0}" ShortID="36369421">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-12</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FE5B3B6A-E6CB-4082-B467-E6F54998962E}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{E539F101-3E94-42B6-9BCA-4968ABB273DF}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="sketch_for_game" ID="{A08C0B55-4667-43A3-BC56-BD40431A17F5}">
+							<Language>SFX</Language>
+							<AudioFile>sketch_for_game.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="971792626"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="sketch_for_game" ID="{A08C0B55-4667-43A3-BC56-BD40431A17F5}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>
