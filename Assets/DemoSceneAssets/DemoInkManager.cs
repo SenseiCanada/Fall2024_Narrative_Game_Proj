@@ -38,7 +38,7 @@ public class DemoInkManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Debug.Log(story.variablesState["kimConnection"]);
     }
 
     void StartStory()
@@ -73,6 +73,7 @@ public class DemoInkManager : MonoBehaviour
         else
         {
             Button choice = CreateChoiceView("End \n Restart?");
+            choice.onClick.AddListener(delegate { TallyScore(); });
             choice.onClick.AddListener(delegate {
                 StartStory();
             });
@@ -123,5 +124,10 @@ public class DemoInkManager : MonoBehaviour
         {
             Destroy(canvas.transform.GetChild(i).gameObject);
         }
+    }
+
+    void TallyScore()
+    {
+
     }
 }
