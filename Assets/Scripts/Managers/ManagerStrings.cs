@@ -19,6 +19,7 @@ public class ManagerStrings : MonoBehaviour
     {
         FindFirstObjectByType<Player>().MakeString += MakeString;
         FLAG_Reductions = false;
+ 
     }
 
     // Update is called once per frame

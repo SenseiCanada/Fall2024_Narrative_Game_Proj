@@ -15,6 +15,8 @@ public class RelationshipString : MonoBehaviour
 
 
     int stringNumber;
+    float stringStrength;
+    float maxStrength;
 
     public event Action<int> LeaveRange; //StringNumber
     public event Action<int, float> EnterRange; //StringNumber, anxietyReduction
@@ -91,11 +93,23 @@ public class RelationshipString : MonoBehaviour
         LengthColor(distance);
         Vector3[] linePoints = { target1.position, endPoint };
         lineRend.SetPositions(linePoints);
+
+        float stringWidth = 1;
+        if (maxStrength != 0)
+            stringWidth = stringStrength / maxStrength;
+        lineRend.startWidth = stringWidth;
+        lineRend.endWidth = stringWidth;
     }
 
     public void AssignStringNumber(int index)
     {
         stringNumber = index;
+    }
+
+    public void AssignStringStrength(float max, float curr)
+    {
+        maxStrength = max;
+        stringStrength = curr;
     }
 
     public float GetAnxietyReduction()
