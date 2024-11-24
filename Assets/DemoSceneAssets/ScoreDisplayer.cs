@@ -22,25 +22,26 @@ public class ScoreDisplayer : MonoBehaviour
     {
         
     }
-    
+
+
+    //with ObserverVariable method requires to subscribe to OnCreateStory
     void ObserveStoryVar(Story currentStory)
     {
         if (currentStory != null)
         {
-            speakerConnection = (int)currentStory.variablesState["kimConnection"];
-            Debug.Log(speakerConnection);
+            if (currentStory.variablesState["kimConnection"] != null)
+            {
+                currentStory.ObserveVariable("kimConnection", (string varName, object newValue)
+                =>
+                { SetConnectionScore((int)newValue); });
+            }
 
-
-            currentStory.ObserveVariable("kimConnection", (string varName, object newValue)
-            => { SetConnectionScore((int)newValue); });
         }
 
-        Debug.Log("Observed");
-        
     }
-    void SetConnectionScore(int newScore)
+    void SetConnectionScore(int newScore) //redundant with button listener
     {
-        Debug.Log("Score should be set to "+ newScore);
+        Debug.Log("Score should be set to " + newScore);
         if (scoreText != null)
         {
             scoreText.text = newScore.ToString();
