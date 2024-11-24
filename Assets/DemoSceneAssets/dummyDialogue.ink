@@ -1,6 +1,7 @@
 // dummy dialoge for testing building connections with NPCs
 
 VAR kimConnection = 0
+VAR NPCName = "Kim"
 
 ->KimDialogue
 
