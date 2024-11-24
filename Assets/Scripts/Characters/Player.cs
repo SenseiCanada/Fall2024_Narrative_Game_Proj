@@ -30,6 +30,7 @@ public class Player : Character
         }
     }
 
+    //Simple tank controls for moving around. Tank controols = forward & backward to move, left & right to turn.
     void MovementControl()
     {
         float forBack = Input.GetAxis("Vertical");
@@ -39,12 +40,14 @@ public class Player : Character
         transform.Rotate(Vector3.up, spin * turnSpeed * Time.deltaTime);
     }
 
+    //Activates the hitbox for interacting with NPCs and other objects.
     void Interact()
     {
         interact.enabled = true;
         Invoke("TurnOffInteract", 0.1f);
     }
 
+    //Deactivates said hitbox.
     void TurnOffInteract()
     {
         interact.enabled = false;

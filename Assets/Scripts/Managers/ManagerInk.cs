@@ -6,11 +6,12 @@ using TMPro;
 
 public class ManagerInk : MonoBehaviour
 {
-
+    //INK Plugin Assets
     [SerializeField]
     private TextAsset inkJSONAsset = null;
     public Story currentStory;
 
+    //UI Elements where dialogue tree appears.
     [SerializeField]
     private GameObject dialogueUIParent;
     [SerializeField]
@@ -64,8 +65,9 @@ public class ManagerInk : MonoBehaviour
             text = text.Trim(); //removes extra white space
             CreateContentView(text); //display on screen
         }
-
-        if (currentStory.currentChoices.Count > 0)
+        
+        //Creates buttons based on number of options in the INK story.
+        if (currentStory.currentChoices.Count > 0) 
         {
             for (int i = 0; i < currentStory.currentChoices.Count; i++)
             {
@@ -77,7 +79,7 @@ public class ManagerInk : MonoBehaviour
                 });
             }
         }
-        else
+        else //End of dialogue tree.
         {
             Button choice = CreateChoiceView("End \n Restart?");
             choice.onClick.AddListener(delegate { TallyScore(); });
@@ -87,6 +89,7 @@ public class ManagerInk : MonoBehaviour
         }
     }
     
+    //Handler for dialogue tree buttons; Wipes current UI & generates new options.
     void OnClickChoiceButton(Choice choice)
     {
         currentStory.ChooseChoiceIndex(choice.index);
@@ -94,6 +97,7 @@ public class ManagerInk : MonoBehaviour
         RefreshView();
     }
     
+    //Creates the dialogue box with the passed text.
     void CreateContentView(string text)
     {
         Debug.Log(text);
@@ -107,6 +111,7 @@ public class ManagerInk : MonoBehaviour
         speakerText.transform.SetSiblingIndex(1);
     }
     
+    //Creates the buttons for the given dialogue options.
     Button CreateChoiceView(string text)
     {
         Button choice = Instantiate(buttonPrefab) as Button;
@@ -126,6 +131,7 @@ public class ManagerInk : MonoBehaviour
         return choice;
     }
 
+    //Wipes the dialogue tree panel of all assets.
     void RemoveChildren()
     {
         int childCount = dialogueUIParent.transform.childCount;
